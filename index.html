@@ -1,28 +1,68 @@
-<article class="audio-card">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>اختبار الصوت</title>
 
-  <span class="audio-type">
-    فضل الصلاة على النبي ﷺ
-  </span>
+  <style>
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#061a2b;
+      color:white;
+      font-family:Tahoma,Arial,sans-serif;
+    }
 
-  <div class="scholar">
-    الشيخ ولد سيدي يحي
-  </div>
+    .box{
+      width:min(92%,520px);
+      padding:30px 22px;
+      border:1px solid #d5a44a;
+      border-radius:24px;
+      background:#0a2941;
+      text-align:center;
+    }
 
-  <div class="audio-title">
-    فضل الصلاة على النبي ﷺ
-  </div>
+    h1{
+      color:#f0bd5e;
+      font-size:28px;
+      margin-bottom:18px;
+    }
 
-  <div class="audio-info">
-    مقطع مرفوع مباشرة داخل منصة منهاج الهدى.
-  </div>
+    p{
+      font-size:18px;
+      line-height:1.9;
+      color:#d6dde2;
+    }
 
-  <div class="player-box">
-    <audio controls preload="none">
-      <source
-        src="فضل الصلاة على النبي ولد سيدي يحي.mp3"
-        type="audio/mpeg">
+    audio{
+      width:100%;
+      margin-top:20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box">
+
+    <h1>اختبار المقطع الصوتي</h1>
+
+    <p>
+      الشيخ ولد سيدي يحي
+      <br>
+      فضل الصلاة على النبي ﷺ
+    </p>
+
+    <audio controls preload="metadata">
+      <source src="audio-01.mp3.mp3" type="audio/mpeg">
       متصفحك لا يدعم تشغيل الصوت.
     </audio>
+
   </div>
 
-</article>
+</body>
+</html>
