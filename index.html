@@ -2,38 +2,39 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+<meta name="theme-color" content="#061b2d">
 
 <title>زاد المحبين | في فضل الصلاة على النبي الأمين ﷺ</title>
 
-<meta name="description" content="زاد المحبين في فضل الصلاة على النبي الأمين ﷺ - منصة دعوية في الصلاة على النبي ﷺ وشمائله وسيرته وهديه.">
-<meta name="theme-color" content="#061b2c">
-
-<!-- أيقونة المنصة -->
-<link rel="icon" type="image/svg+xml"
-href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='110' fill='%23071d30'/%3E%3Ccircle cx='256' cy='256' r='190' fill='none' stroke='%23e5b451' stroke-width='12'/%3E%3Ctext x='256' y='285' text-anchor='middle' font-size='150' fill='%23f7d780'%3Eﷺ%3C/text%3E%3C/svg%3E">
+<meta
+  name="description"
+  content="زاد المحبين في فضل الصلاة على النبي الأمين ﷺ - إحدى منصات منهاج الهدى">
 
 <style>
 
 :root{
-  --night:#020811;
+  --night:#020914;
   --navy:#061b2d;
-  --navy2:#092c47;
-  --navy3:#0c4568;
-  --blue:#13739b;
+  --navy2:#082c48;
+  --navy3:#0c3d5e;
+  --navy4:#10577a;
 
-  --gold:#c88d2d;
-  --gold2:#eab94f;
-  --gold3:#ffe49a;
+  --gold:#c78c2c;
+  --gold2:#e7b84f;
+  --gold3:#f5d477;
+  --gold4:#ffebad;
 
-  --white:#f8fbff;
-  --text:#d9e4eb;
-  --muted:#92a8b8;
+  --white:#f9fbfd;
+  --text:#d8e2e9;
+  --muted:#99aebb;
 
-  --line:rgba(234,185,79,.36);
+  --line:rgba(231,184,79,.38);
 
   --shadow:
-    0 24px 65px rgba(0,0,0,.34);
+    0 24px 70px rgba(0,0,0,.34);
 }
 
 *{
@@ -47,6 +48,7 @@ html{
 body{
   margin:0;
   min-height:100vh;
+  overflow-x:hidden;
 
   color:var(--white);
 
@@ -58,35 +60,36 @@ body{
     sans-serif;
 
   background:
-    radial-gradient(circle at 85% 0%,
-      rgba(21,116,155,.22),
-      transparent 28%),
-
-    radial-gradient(circle at 8% 35%,
-      rgba(216,157,48,.08),
-      transparent 24%),
-
+    radial-gradient(
+      circle at 85% 0%,
+      rgba(16,105,147,.25),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 10% 42%,
+      rgba(202,143,40,.08),
+      transparent 23%
+    ),
     linear-gradient(
       155deg,
-      #01060b 0%,
-      #06192a 48%,
-      #020b14 100%
+      #01070d,
+      #06192a 47%,
+      #020d18
     );
 }
 
-body:before{
+body::before{
   content:"";
   position:fixed;
   inset:0;
-  pointer-events:none;
   z-index:-1;
-
-  opacity:.13;
+  pointer-events:none;
+  opacity:.11;
 
   background:
     repeating-linear-gradient(
       35deg,
-      rgba(255,255,255,.025) 0 1px,
+      rgba(255,255,255,.022) 0 1px,
       transparent 1px 7px
     );
 }
@@ -102,14 +105,14 @@ input{
 }
 
 .container{
-  width:min(1180px,calc(100% - 24px));
+  width:min(1160px,calc(100% - 22px));
   margin:auto;
 }
 
 
-/* =========================
+/* ===============================
    TOP BAR
-========================= */
+=============================== */
 
 .topbar{
   position:sticky;
@@ -117,81 +120,130 @@ input{
   z-index:100;
 
   backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
 
-  background:
-    rgba(2,9,16,.90);
+  background:rgba(2,9,16,.91);
 
-  border-bottom:
-    1px solid var(--line);
+  border-bottom:1px solid var(--line);
 }
 
 .top-inner{
-  min-height:72px;
+  min-height:80px;
 
   display:flex;
   align-items:center;
   justify-content:space-between;
 
-  gap:12px;
+  gap:10px;
 }
 
 .mini-brand{
   color:var(--gold2);
-  font-size:22px;
+  font-size:21px;
   font-weight:900;
   white-space:nowrap;
 }
 
-.hijri{
-  color:#dce6ed;
-  font-size:14px;
-  text-align:center;
+.datetime-bar{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  flex-wrap:wrap;
 }
+
+.datetime-piece{
+  padding:8px 13px;
+
+  border-radius:999px;
+
+  border:1px solid rgba(231,184,79,.26);
+
+  background:rgba(255,255,255,.035);
+
+  font-size:15px;
+  white-space:nowrap;
+}
+
+.datetime-piece strong{
+  color:var(--gold3);
+}
+
+#hijriDate,
+#clock{
+  direction:ltr;
+}
+
+
+/* ===============================
+   SOCIAL ICONS
+=============================== */
 
 .socials{
   display:flex;
-  gap:8px;
+  align-items:center;
+  gap:9px;
 }
 
 .social-link{
-  width:42px;
-  height:42px;
+  width:50px;
+  height:50px;
 
   display:grid;
   place-items:center;
 
   border-radius:50%;
 
-  border:
-    1px solid var(--line);
+  border:1px solid var(--line);
 
-  background:#071b2b;
+  background:
+    linear-gradient(
+      145deg,
+      #09253b,
+      #04131f
+    );
 
-  transition:.25s;
+  transition:.25s ease;
+
+  box-shadow:
+    0 6px 20px rgba(0,0,0,.22);
+}
+
+.social-link svg{
+  width:29px;
+  height:29px;
+  display:block;
+}
+
+.youtube svg{
+  fill:#ff0033;
+}
+
+.tiktok svg{
+  fill:#ffffff;
+
+  filter:
+    drop-shadow(2px 0 0 #25f4ee)
+    drop-shadow(-2px 0 0 #fe2c55);
 }
 
 .social-link:hover{
-  transform:translateY(-3px);
+  transform:translateY(-3px) scale(1.06);
+
   border-color:var(--gold2);
-}
 
-.youtube{
-  color:#ff4f5d;
-  font-size:20px;
-}
-
-.tiktok{
-  color:white;
-  font-size:20px;
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.25),
+    0 0 18px rgba(231,184,79,.12);
 }
 
 
-/* =========================
+/* ===============================
    HERO
-========================= */
+=============================== */
 
 .hero{
-  padding:28px 0 20px;
+  padding:27px 0 22px;
 }
 
 .hero-shell{
@@ -200,90 +252,84 @@ input{
 
   border-radius:38px;
 
-  border:
-    1px solid var(--line);
+  border:1px solid var(--line);
 
   box-shadow:var(--shadow);
 
   background:
     radial-gradient(
       circle at 50% 0%,
-      rgba(22,112,154,.30),
+      rgba(20,109,151,.31),
       transparent 40%
     ),
-
     radial-gradient(
       circle at 10% 100%,
       rgba(203,143,39,.10),
-      transparent 35%
+      transparent 34%
     ),
-
     linear-gradient(
       145deg,
-      #082d49,
+      #082f4c,
       #03121f
     );
 }
 
-.hero-shell:after{
+.hero-shell::before{
   content:"";
+
   position:absolute;
 
-  width:500px;
-  height:500px;
+  width:570px;
+  height:570px;
 
   border-radius:50%;
 
-  top:-390px;
+  top:-445px;
   left:50%;
 
   transform:translateX(-50%);
 
-  border:
-    1px solid rgba(255,221,144,.22);
+  border:1px solid rgba(255,223,149,.16);
 
   box-shadow:
-    0 0 100px rgba(230,176,66,.10);
+    0 0 100px rgba(232,181,73,.08);
 }
 
 .hero-inner{
   position:relative;
   z-index:2;
 
-  padding:
-    65px 25px 55px;
+  padding:63px 24px 57px;
 
   text-align:center;
 }
 
 .hero-kicker{
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
 
-  padding:
-    9px 20px;
+  padding:10px 21px;
 
   border-radius:999px;
 
-  border:
-    1px solid var(--line);
+  border:1px solid var(--line);
 
-  background:
-    rgba(1,10,18,.58);
+  background:rgba(1,10,18,.55);
 
   color:var(--gold3);
 
   font-size:18px;
+
+  animation:fadeDown .8s ease both;
 }
 
 .hero-title{
-  margin:
-    21px 0 0;
+  margin:20px 0 0;
 
-  font-size:
-    clamp(64px,13vw,132px);
+  font-size:clamp(67px,13vw,132px);
 
-  line-height:1.15;
-
+  line-height:1.13;
   font-weight:900;
 
   letter-spacing:-2px;
@@ -291,10 +337,10 @@ input{
   background:
     linear-gradient(
       180deg,
-      #fff2bb 0%,
-      #f1c15b 32%,
-      #c58524 72%,
-      #ffe59d 100%
+      #fff3bd 0%,
+      #f0c15b 33%,
+      #c68525 72%,
+      #ffe69e 100%
     );
 
   -webkit-background-clip:text;
@@ -304,45 +350,19 @@ input{
 
   filter:
     drop-shadow(
-      0 8px 20px
-      rgba(0,0,0,.30)
+      0 8px 20px rgba(0,0,0,.30)
     );
 
   animation:
-    titleGlow 4s
-    ease-in-out infinite;
+    heroTitle 1s ease both,
+    titleGlow 5s 1s ease-in-out infinite;
 }
 
-@keyframes titleGlow{
-
-  0%,100%{
-    filter:
-      drop-shadow(
-        0 8px 20px
-        rgba(0,0,0,.32)
-      );
-  }
-
-  50%{
-    filter:
-      drop-shadow(
-        0 8px 20px
-        rgba(0,0,0,.28)
-      )
-      drop-shadow(
-        0 0 17px
-        rgba(238,188,82,.17)
-      );
-  }
-
-}
-
-.gold-rule{
+.gold-divider{
   width:190px;
   height:2px;
 
-  margin:
-    18px auto 22px;
+  margin:17px auto 21px;
 
   background:
     linear-gradient(
@@ -351,34 +371,53 @@ input{
       var(--gold2),
       transparent
     );
+
+  position:relative;
+}
+
+.gold-divider::after{
+  content:"◆";
+
+  position:absolute;
+  left:50%;
+  top:50%;
+
+  transform:translate(-50%,-50%);
+
+  padding:0 9px;
+
+  background:#082c48;
+
+  color:var(--gold2);
+
+  font-size:12px;
 }
 
 .hero-subtitle{
   margin:0;
 
-  font-size:
-    clamp(23px,5vw,38px);
+  color:#fff;
+
+  font-size:clamp(24px,5vw,39px);
 
   line-height:1.8;
 
   font-weight:800;
 
-  color:white;
+  animation:
+    fadeUp 1s .15s ease both;
 }
 
-.prophet-seal{
-  width:min(390px,92%);
+.prophet-mark{
+  width:min(400px,93%);
 
-  margin:
-    27px auto 0;
+  margin:26px auto 0;
 
-  padding:
-    17px 20px;
+  padding:16px 21px;
 
   border-radius:999px;
 
-  border:
-    1px solid var(--line);
+  border:1px solid var(--line);
 
   background:
     radial-gradient(
@@ -392,12 +431,12 @@ input{
 .prophet-name{
   color:var(--gold3);
 
-  font-size:31px;
+  font-size:32px;
 
   font-weight:900;
 }
 
-.prophet-caption{
+.prophet-small{
   margin-top:3px;
 
   color:#e8eff3;
@@ -405,54 +444,124 @@ input{
   font-size:15px;
 }
 
-.hero-description{
-  max-width:820px;
+.hero-copy{
+  max-width:830px;
 
-  margin:
-    25px auto 0;
+  margin:25px auto 0;
 
-  color:#d1dce3;
+  color:#d0dbe2;
 
   font-size:19px;
 
   line-height:2.25;
 }
 
-.ayah{
-  max-width:870px;
 
-  margin:
-    28px auto 0;
+/* ===============================
+   OPENING AYAH
+=============================== */
 
-  padding:
-    23px 18px;
+.ayah-stage{
+  max-width:900px;
 
-  border-radius:25px;
+  margin:29px auto 0;
 
-  border:
-    1px solid var(--line);
+  padding:27px 20px;
+
+  position:relative;
+  overflow:hidden;
+
+  border-radius:27px;
+
+  border:1px solid var(--line);
 
   background:
+    radial-gradient(
+      circle at 50% -20%,
+      rgba(233,184,79,.12),
+      transparent 50%
+    ),
     rgba(2,12,21,.66);
 
-  color:var(--gold3);
+  opacity:0;
 
-  font-size:22px;
+  transform:
+    translateY(20px)
+    scale(.985);
+
+  animation:
+    ayahEnter 1.2s .7s ease forwards;
+}
+
+.ayah-stage::after{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  bottom:0;
+
+  width:120px;
+
+  left:-160px;
+
+  transform:skewX(-17deg);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,236,179,.09),
+      transparent
+    );
+
+  animation:
+    ayahShine 5.5s 2s ease-in-out infinite;
+}
+
+.ayah-label{
+  margin-bottom:12px;
+
+  color:var(--gold2);
+
+  font-size:14px;
+}
+
+.ayah-text{
+  position:relative;
+  z-index:2;
+
+  color:var(--gold4);
+
+  font-size:clamp(21px,4.4vw,30px);
 
   line-height:2;
+
+  font-weight:700;
 }
 
-.ayah small{
-  color:#aab9c3;
+.ayah-text span{
+  opacity:0;
+
+  animation:
+    wordReveal .7s ease forwards;
+}
+
+.ayah-source{
+  margin-top:12px;
+
+  color:#9fafbb;
+
+  font-size:14px;
 }
 
 
-/* =========================
-   NAVIGATION
-========================= */
+/* ===============================
+   QUICK NAV
+=============================== */
 
 .quick-nav{
-  margin-top:18px;
+  margin-top:17px;
 
   display:grid;
 
@@ -463,9 +572,15 @@ input{
 }
 
 .quick-nav a{
-  min-height:100px;
+  min-height:98px;
 
   padding:12px 5px;
+
+  border-radius:21px;
+
+  border:1px solid rgba(234,185,79,.28);
+
+  background:rgba(7,31,50,.79);
 
   display:flex;
   flex-direction:column;
@@ -476,50 +591,42 @@ input{
 
   text-align:center;
 
-  border-radius:21px;
-
-  border:
-    1px solid
-    rgba(234,185,79,.28);
-
-  background:
-    rgba(7,31,50,.78);
-
-  transition:.25s;
+  transition:.25s ease;
 }
 
 .quick-nav a:hover{
   transform:translateY(-4px);
 
-  border-color:
-    var(--gold2);
+  border-color:var(--gold2);
+
+  background:rgba(9,43,70,.92);
 }
 
 .nav-icon{
   color:var(--gold2);
 
-  font-size:28px;
+  font-size:29px;
 }
 
 
-/* =========================
-   SECTIONS
-========================= */
+/* ===============================
+   SECTION
+=============================== */
 
 .section{
-  padding:52px 0;
+  padding:54px 0;
 }
 
 .section-head{
   text-align:center;
 
-  margin-bottom:28px;
+  margin-bottom:27px;
 }
 
 .section-head h2{
   margin:0;
 
-  font-size:36px;
+  font-size:37px;
 
   line-height:1.5;
 }
@@ -529,10 +636,9 @@ input{
 }
 
 .section-head p{
-  max-width:780px;
+  max-width:760px;
 
-  margin:
-    8px auto 0;
+  margin:8px auto 0;
 
   color:var(--muted);
 
@@ -542,63 +648,460 @@ input{
 }
 
 
-/* =========================
-   DAILY CARD
-========================= */
+/* ===============================
+   INFO CARDS
+=============================== */
 
-.daily-card{
-  padding:30px;
+.info-grid{
+  display:grid;
 
-  border-radius:29px;
+  grid-template-columns:
+    repeat(3,1fr);
 
-  border:
-    1px solid var(--line);
+  gap:14px;
+}
+
+.info-card{
+  position:relative;
+  overflow:hidden;
+
+  padding:27px;
+
+  min-height:270px;
+
+  border-radius:26px;
+
+  border:1px solid var(--line);
 
   background:
     radial-gradient(
       circle at 100% 0%,
-      rgba(17,103,142,.25),
+      rgba(16,95,131,.23),
       transparent 38%
     ),
-
     linear-gradient(
       145deg,
-      #092c48,
+      #092c47,
       #041522
     );
 
-  text-align:center;
-
-  box-shadow:
-    0 18px 45px
-    rgba(0,0,0,.18);
+  transition:.3s ease;
 }
 
-.daily-label{
+.info-card:hover{
+  transform:translateY(-4px);
+
+  border-color:
+    rgba(245,212,119,.68);
+}
+
+.card-icon{
+  width:52px;
+  height:52px;
+
+  display:grid;
+  place-items:center;
+
+  margin-bottom:16px;
+
+  border-radius:16px;
+
+  border:
+    1px solid rgba(231,184,79,.28);
+
+  background:
+    rgba(231,184,79,.08);
+
+  color:var(--gold3);
+
+  font-size:22px;
+}
+
+.info-card h3{
+  margin:0;
+
   color:var(--gold2);
+
+  font-size:24px;
+
+  line-height:1.6;
+}
+
+.info-card p{
+  color:#d3dde4;
 
   font-size:17px;
 
-  font-weight:800;
+  line-height:2.15;
 }
 
-.daily-text{
-  margin:
-    12px auto 0;
+.source{
+  display:block;
 
-  max-width:760px;
+  margin-top:16px;
+
+  padding-top:13px;
+
+  border-top:
+    1px solid rgba(255,255,255,.07);
+
+  color:#91a5b3;
+
+  font-size:13px;
+
+  line-height:1.8;
+}
+
+
+/* ===============================
+   ARTICLE CARDS
+=============================== */
+
+.library-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:14px;
+}
+
+.article-card{
+  padding:27px;
+
+  border-radius:26px;
+
+  border:1px solid var(--line);
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(16,91,126,.22),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      #092a44,
+      #041520
+    );
+}
+
+.article-tag{
+  display:inline-block;
+
+  margin-bottom:12px;
+
+  padding:5px 11px;
+
+  border-radius:999px;
+
+  border:
+    1px solid rgba(229,176,67,.30);
+
+  color:var(--gold3);
+
+  font-size:13px;
+}
+
+.article-card h3{
+  margin:0;
+
+  color:var(--gold2);
+
+  font-size:24px;
+
+  line-height:1.65;
+}
+
+.article-card p{
+  color:#d0dbe2;
+
+  font-size:18px;
+
+  line-height:2.2;
+}
+
+
+/* ===============================
+   AUDIO
+=============================== */
+
+.audio-tools{
+  margin-bottom:21px;
+
+  padding:15px;
+
+  border-radius:23px;
+
+  border:1px solid var(--line);
+
+  background:rgba(5,25,41,.78);
+}
+
+.search-input{
+  width:100%;
+
+  min-height:57px;
+
+  padding:0 18px;
+
+  border-radius:18px;
+
+  border:
+    1px solid rgba(255,255,255,.12);
+
+  outline:none;
+
+  background:#051724;
+
+  color:#fff;
+
+  font-size:17px;
+}
+
+.filters{
+  margin-top:11px;
+
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+
+  gap:8px;
+}
+
+.filter-button{
+  padding:9px 15px;
+
+  border-radius:999px;
+
+  border:
+    1px solid rgba(230,178,72,.30);
+
+  cursor:pointer;
+
+  color:#d8e2e8;
+
+  background:#071d2e;
+}
+
+.filter-button.active{
+  color:#06111b;
+
+  font-weight:900;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f0c35f,
+      #b9781d
+    );
+}
+
+.audio-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:14px;
+}
+
+.audio-card{
+  position:relative;
+
+  overflow:hidden;
+
+  padding:22px;
+
+  border-radius:25px;
+
+  border:1px solid var(--line);
+
+  background:
+    radial-gradient(
+      circle at 95% 0%,
+      rgba(18,100,140,.23),
+      transparent 36%
+    ),
+    linear-gradient(
+      145deg,
+      #092b45,
+      #041522
+    );
+
+  transition:.3s ease;
+}
+
+.audio-card.playing{
+  border-color:var(--gold3);
+
+  box-shadow:
+    0 0 0 1px rgba(235,185,78,.13),
+    0 14px 38px rgba(206,147,41,.11);
+}
+
+.audio-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:15px;
+}
+
+.audio-number{
+  color:rgba(255,226,154,.48);
+
+  font-size:14px;
+
+  margin-bottom:5px;
+}
+
+.audio-title{
+  margin:0;
+
+  color:var(--gold2);
+
+  font-size:22px;
+
+  font-weight:900;
+}
+
+.audio-scholar{
+  margin-top:6px;
+
+  color:#cfd9e0;
+
+  font-size:15px;
+}
+
+.big-play{
+  flex:0 0 72px;
+
+  width:72px;
+  height:72px;
+
+  border:0;
+
+  border-radius:50%;
+
+  cursor:pointer;
+
+  display:grid;
+  place-items:center;
+
+  color:#06131e;
+
+  font-size:27px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffe39a,
+      #c98d2d
+    );
+
+  border:
+    2px solid rgba(255,231,166,.35);
+
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.25),
+    0 0 0 6px rgba(232,182,72,.05);
+
+  transition:.25s ease;
+}
+
+.big-play:hover{
+  transform:scale(1.07);
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.28),
+    0 0 25px rgba(232,182,72,.18);
+}
+
+.big-play:active{
+  transform:scale(.94);
+}
+
+.audio-card audio{
+  width:100%;
+
+  margin-top:17px;
+
+  height:46px;
+}
+
+.more-audio-wrap{
+  text-align:center;
+
+  margin-top:22px;
+}
+
+.more-audio{
+  padding:13px 27px;
+
+  border-radius:999px;
+
+  border:1px solid var(--line);
+
+  color:var(--gold3);
+
+  background:rgba(5,27,44,.85);
+
+  cursor:pointer;
+}
+
+
+/* ===============================
+   HADITH
+=============================== */
+
+.hadith-card{
+  margin-bottom:14px;
+
+  padding:27px;
+
+  border-radius:25px;
+
+  border:1px solid var(--line);
+
+  background:
+    linear-gradient(
+      145deg,
+      #0a2e4a,
+      #041521
+    );
+}
+
+.hadith-card h3{
+  margin:0;
+
+  color:var(--gold2);
+
+  font-size:23px;
+}
+
+.hadith-text{
+  margin-top:12px;
+
+  color:#fff;
 
   font-size:21px;
 
-  line-height:2.1;
+  line-height:2.2;
+}
 
-  color:#f2f6f8;
+.hadith-source{
+  margin-top:10px;
+
+  color:#9db0bd;
+
+  font-size:14px;
 }
 
 
-/* =========================
+/* ===============================
    TASBIH
-========================= */
+=============================== */
 
 .stats{
   display:grid;
@@ -614,8 +1117,7 @@ input{
 
   border-radius:28px;
 
-  border:
-    1px solid var(--line);
+  border:1px solid var(--line);
 
   background:
     radial-gradient(
@@ -623,7 +1125,6 @@ input{
       rgba(18,96,135,.28),
       transparent 38%
     ),
-
     linear-gradient(
       145deg,
       #092b46,
@@ -682,10 +1183,6 @@ input{
       #ffe59d,
       #c88c2c
     );
-
-  box-shadow:
-    0 10px 30px
-    rgba(203,143,40,.18);
 }
 
 .reset-button{
@@ -701,321 +1198,9 @@ input{
 }
 
 
-/* =========================
-   AUDIO
-========================= */
-
-.audio-tools{
-  margin-bottom:22px;
-
-  padding:16px;
-
-  border-radius:23px;
-
-  border:
-    1px solid var(--line);
-
-  background:
-    rgba(5,25,41,.78);
-}
-
-.search-input{
-  width:100%;
-
-  min-height:58px;
-
-  padding:
-    0 18px;
-
-  border-radius:18px;
-
-  border:
-    1px solid
-    rgba(255,255,255,.12);
-
-  outline:none;
-
-  color:white;
-
-  background:#051724;
-
-  font-size:17px;
-}
-
-.filters{
-  margin-top:12px;
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  justify-content:center;
-
-  gap:8px;
-}
-
-.filter-button{
-  padding:
-    9px 15px;
-
-  border-radius:999px;
-
-  border:
-    1px solid
-    rgba(230,178,72,.30);
-
-  cursor:pointer;
-
-  color:#d8e2e8;
-
-  background:#071d2e;
-}
-
-.filter-button.active{
-  color:#06111b;
-
-  font-weight:900;
-
-  background:
-    linear-gradient(
-      135deg,
-      #f0c35f,
-      #b9781d
-    );
-}
-
-.audio-grid{
-  display:grid;
-
-  grid-template-columns:
-    repeat(2,1fr);
-
-  gap:14px;
-}
-
-.audio-card{
-  position:relative;
-
-  overflow:hidden;
-
-  padding:23px;
-
-  border-radius:25px;
-
-  border:
-    1px solid var(--line);
-
-  background:
-    radial-gradient(
-      circle at 95% 0%,
-      rgba(18,100,140,.23),
-      transparent 36%
-    ),
-
-    linear-gradient(
-      145deg,
-      #092b45,
-      #041522
-    );
-
-  transition:.25s;
-}
-
-.audio-card:hover{
-  transform:
-    translateY(-3px);
-}
-
-.audio-number{
-  position:absolute;
-
-  left:17px;
-  top:14px;
-
-  color:
-    rgba(255,226,154,.38);
-
-  font-size:31px;
-
-  font-weight:900;
-}
-
-.audio-badge{
-  display:inline-block;
-
-  padding:
-    6px 11px;
-
-  border-radius:999px;
-
-  border:
-    1px solid
-    rgba(232,179,75,.30);
-
-  color:var(--gold3);
-
-  font-size:13px;
-}
-
-.audio-title{
-  margin:
-    14px 45px 3px 0;
-
-  color:white;
-
-  font-size:21px;
-
-  font-weight:800;
-}
-
-.audio-scholar{
-  margin-top:6px;
-
-  color:var(--gold2);
-
-  font-size:16px;
-}
-
-.audio-meta{
-  margin-top:5px;
-
-  color:#9fb1bd;
-
-  font-size:14px;
-}
-
-audio{
-  width:100%;
-
-  margin-top:16px;
-}
-
-
-/* =========================
-   ARTICLES
-========================= */
-
-.library-grid{
-  display:grid;
-
-  grid-template-columns:
-    repeat(2,1fr);
-
-  gap:14px;
-}
-
-.article-card{
-  padding:27px;
-
-  border-radius:26px;
-
-  border:
-    1px solid var(--line);
-
-  background:
-    radial-gradient(
-      circle at 100% 0%,
-      rgba(16,91,126,.22),
-      transparent 35%
-    ),
-
-    linear-gradient(
-      145deg,
-      #092a44,
-      #041520
-    );
-}
-
-.article-tag{
-  display:inline-block;
-
-  margin-bottom:12px;
-
-  padding:
-    5px 11px;
-
-  border-radius:999px;
-
-  border:
-    1px solid
-    rgba(229,176,67,.30);
-
-  color:var(--gold3);
-
-  font-size:13px;
-}
-
-.article-card h3{
-  margin:0;
-
-  color:var(--gold2);
-
-  font-size:24px;
-
-  line-height:1.65;
-}
-
-.article-card p{
-  color:#d0dbe2;
-
-  font-size:18px;
-
-  line-height:2.2;
-}
-
-
-/* =========================
-   HADITH
-========================= */
-
-.hadith-card{
-  margin-bottom:14px;
-
-  padding:27px;
-
-  border-radius:25px;
-
-  border:
-    1px solid var(--line);
-
-  background:
-    linear-gradient(
-      145deg,
-      #0a2e4a,
-      #041521
-    );
-}
-
-.hadith-card h3{
-  margin:0;
-
-  color:var(--gold2);
-
-  font-size:23px;
-}
-
-.hadith-text{
-  margin-top:12px;
-
-  color:white;
-
-  font-size:21px;
-
-  line-height:2.2;
-}
-
-.source{
-  margin-top:10px;
-
-  color:#9db0bd;
-
-  font-size:14px;
-}
-
-
-/* =========================
+/* ===============================
    FAQ
-========================= */
+=============================== */
 
 .faq{
   display:grid;
@@ -1028,8 +1213,7 @@ details{
 
   border-radius:22px;
 
-  border:
-    1px solid var(--line);
+  border:1px solid var(--line);
 
   background:
     linear-gradient(
@@ -1054,8 +1238,7 @@ summary{
 details p{
   margin:0;
 
-  padding:
-    0 21px 22px;
+  padding:0 21px 22px;
 
   color:#d0dae1;
 
@@ -1065,20 +1248,18 @@ details p{
 }
 
 
-/* =========================
-   BLESSING
-========================= */
+/* ===============================
+   BLESSING BOX
+=============================== */
 
 .blessing-box{
-  margin:
-    28px auto 0;
+  margin:28px auto 0;
 
-  padding:29px;
+  padding:30px;
 
   border-radius:29px;
 
-  border:
-    1px solid var(--line);
+  border:1px solid var(--line);
 
   text-align:center;
 
@@ -1094,7 +1275,7 @@ details p{
 .blessing-name{
   color:var(--gold2);
 
-  font-size:42px;
+  font-size:43px;
 
   font-weight:900;
 }
@@ -1102,7 +1283,7 @@ details p{
 .blessing-text{
   margin-top:8px;
 
-  color:white;
+  color:#fff;
 
   font-size:21px;
 
@@ -1110,20 +1291,18 @@ details p{
 }
 
 
-/* =========================
+/* ===============================
    FOOTER
-========================= */
+=============================== */
 
 .site-footer{
   margin-top:40px;
 
-  padding:
-    58px 20px 48px;
+  padding:58px 20px 48px;
 
   text-align:center;
 
-  border-top:
-    1px solid var(--line);
+  border-top:1px solid var(--line);
 
   background:
     radial-gradient(
@@ -1131,7 +1310,6 @@ details p{
       rgba(211,154,53,.10),
       transparent 45%
     ),
-
     linear-gradient(
       180deg,
       #041522,
@@ -1150,7 +1328,7 @@ details p{
 .footer-subtitle{
   margin-top:6px;
 
-  color:white;
+  color:#fff;
 
   font-size:18px;
 }
@@ -1160,14 +1338,12 @@ details p{
 
   margin-top:18px;
 
-  padding:
-    7px 17px;
+  padding:7px 17px;
 
   border-radius:999px;
 
   border:
-    1px solid
-    rgba(240,190,85,.25);
+    1px solid rgba(240,190,85,.25);
 
   color:#b9c9d4;
 
@@ -1177,13 +1353,10 @@ details p{
 .supervisor-signature{
   max-width:440px;
 
-  margin:
-    28px auto 0;
+  margin:28px auto 0;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   gap:15px;
@@ -1214,8 +1387,6 @@ details p{
 .supervisor-signature small{
   display:block;
 
-  margin-bottom:3px;
-
   color:#91a8b8;
 
   font-size:12px;
@@ -1225,35 +1396,29 @@ details p{
   color:var(--gold3);
 
   font-size:21px;
-
-  font-weight:900;
-
-  white-space:nowrap;
 }
 
 .footer-dua{
-  margin:
-    24px auto 0;
-
   max-width:700px;
+
+  margin:24px auto 0;
 
   color:#8299a9;
 
-  font-size:14px;
-
   line-height:2;
+
+  font-size:14px;
 }
 
 
-/* =========================
-   ANIMATIONS
-========================= */
+/* ===============================
+   REVEAL
+=============================== */
 
 .reveal{
   opacity:0;
 
-  transform:
-    translateY(22px);
+  transform:translateY(22px);
 
   transition:
     opacity .65s ease,
@@ -1267,32 +1432,140 @@ details p{
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* ===============================
+   ANIMATIONS
+=============================== */
 
-@media(max-width:720px){
+@keyframes heroTitle{
+  from{
+    opacity:0;
+
+    transform:
+      translateY(25px)
+      scale(.98);
+  }
+
+  to{
+    opacity:1;
+
+    transform:none;
+  }
+}
+
+@keyframes titleGlow{
+  0%,100%{
+    filter:
+      drop-shadow(
+        0 8px 20px rgba(0,0,0,.30)
+      );
+  }
+
+  50%{
+    filter:
+      drop-shadow(
+        0 8px 20px rgba(0,0,0,.27)
+      )
+      drop-shadow(
+        0 0 18px rgba(232,181,73,.16)
+      );
+  }
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+
+    transform:
+      translateY(20px);
+  }
+
+  to{
+    opacity:1;
+
+    transform:none;
+  }
+}
+
+@keyframes fadeDown{
+  from{
+    opacity:0;
+
+    transform:
+      translateY(-14px);
+  }
+
+  to{
+    opacity:1;
+
+    transform:none;
+  }
+}
+
+@keyframes ayahEnter{
+  to{
+    opacity:1;
+
+    transform:none;
+  }
+}
+
+@keyframes wordReveal{
+  from{
+    opacity:0;
+
+    filter:blur(5px);
+  }
+
+  to{
+    opacity:1;
+
+    filter:none;
+  }
+}
+
+@keyframes ayahShine{
+  0%,35%{
+    left:-160px;
+  }
+
+  70%,100%{
+    left:110%;
+  }
+}
+
+
+/* ===============================
+   MOBILE
+=============================== */
+
+@media(max-width:760px){
 
   .container{
-    width:
-      calc(100% - 18px);
+    width:calc(100% - 18px);
   }
 
   .top-inner{
-    min-height:66px;
+    min-height:74px;
   }
 
   .mini-brand{
-    font-size:17px;
+    font-size:16px;
   }
 
-  .hijri{
-    font-size:11px;
+  .datetime-piece{
+    padding:7px 9px;
+
+    font-size:12px;
   }
 
   .social-link{
-    width:36px;
-    height:36px;
+    width:44px;
+    height:44px;
+  }
+
+  .social-link svg{
+    width:26px;
+    height:26px;
   }
 
   .hero{
@@ -1304,8 +1577,7 @@ details p{
   }
 
   .hero-inner{
-    padding:
-      50px 16px 38px;
+    padding:50px 16px 39px;
   }
 
   .hero-kicker{
@@ -1322,16 +1594,12 @@ details p{
     font-size:23px;
   }
 
-  .prophet-name{
-    font-size:28px;
-  }
-
-  .hero-description{
+  .hero-copy{
     font-size:18px;
   }
 
-  .ayah{
-    font-size:19px;
+  .ayah-text{
+    font-size:20px;
   }
 
   .quick-nav{
@@ -1340,25 +1608,35 @@ details p{
   }
 
   .quick-nav a{
-    min-height:92px;
-  }
-
-  .stats,
-  .audio-grid,
-  .library-grid{
-    grid-template-columns:1fr;
+    min-height:91px;
   }
 
   .section{
-    padding:42px 0;
+    padding:43px 0;
   }
 
   .section-head h2{
     font-size:31px;
   }
 
-  .article-card p{
-    font-size:18px;
+  .info-grid,
+  .library-grid,
+  .audio-grid,
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  .info-card{
+    min-height:auto;
+  }
+
+  .big-play{
+    flex-basis:76px;
+
+    width:76px;
+    height:76px;
+
+    font-size:29px;
   }
 
 }
@@ -1378,28 +1656,49 @@ details p{
 زادُ المحبين
 </div>
 
-<div class="hijri" id="hijriDate">
-التاريخ الهجري
+
+<div class="datetime-bar">
+
+<div class="datetime-piece">
+<strong id="hijriDate">...</strong>
 </div>
+
+<div class="datetime-piece">
+<strong id="clock">00:00</strong>
+</div>
+
+</div>
+
 
 <div class="socials">
 
 <a
-class="social-link youtube"
-href="https://youtube.com/@minhaj-alhuda?si=ewIrxDR1OMmjUAyc"
-target="_blank"
-rel="noopener"
-title="منهاج الهدى على يوتيوب">
-▶
+  class="social-link youtube"
+  href="https://youtube.com/@minhaj-alhuda?si=ewIrxDR1OMmjUAyc"
+  target="_blank"
+  rel="noopener"
+  aria-label="يوتيوب منهاج الهدى"
+  title="يوتيوب منهاج الهدى">
+
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"/>
+</svg>
+
 </a>
 
+
 <a
-class="social-link tiktok"
-href="https://www.tiktok.com/@minhaj.alhuda?_r=1&_t=ZS-98wdUNPtpga"
-target="_blank"
-rel="noopener"
-title="منهاج الهدى على تيك توك">
-♪
+  class="social-link tiktok"
+  href="https://www.tiktok.com/@minhaj.alhuda?_r=1&_t=ZS-98wdUNPtpga"
+  target="_blank"
+  rel="noopener"
+  aria-label="تيك توك منهاج الهدى"
+  title="تيك توك منهاج الهدى">
+
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<path d="M16.6 2c.3 2.4 1.7 3.9 4.4 4.1v3.2c-1.6 0-3.1-.5-4.4-1.3v7.2c0 4.5-3.5 6.8-6.9 6.8A6.7 6.7 0 0 1 3 15.3a6.7 6.7 0 0 1 7.8-6.6v3.4a3.4 3.4 0 1 0 2.4 3.2V2h3.4Z"/>
+</svg>
+
 </a>
 
 </div>
@@ -1412,8 +1711,6 @@ title="منهاج الهدى على تيك توك">
 <main>
 
 
-<!-- HERO -->
-
 <section class="hero">
 
 <div class="container hero-shell">
@@ -1421,39 +1718,39 @@ title="منهاج الهدى على تيك توك">
 <div class="hero-inner">
 
 <div class="hero-kicker">
-✦ في رحاب محبة المصطفى ﷺ ✦
+✦ منهاج الهدى • في رحاب محبة المصطفى ﷺ ✦
 </div>
 
 <h1 class="hero-title">
 زادُ المحبين
 </h1>
 
-<div class="gold-rule"></div>
+<div class="gold-divider"></div>
 
 <h2 class="hero-subtitle">
 في فضل الصلاة على النبي الأمين ﷺ
 </h2>
 
 
-<div class="prophet-seal">
+<div class="prophet-mark">
 
 <div class="prophet-name">
 مُحَمَّد ﷺ
 </div>
 
-<div class="prophet-caption">
+<div class="prophet-small">
 رسول الله وخاتم النبيين
 </div>
 
 </div>
 
 
-<p class="hero-description">
+<p class="hero-copy">
 
 منصة دعوية تجمع المختارات الصوتية،
 والأحاديث الصحيحة،
 والشمائل النبوية،
-والمواد الإيمانية والعلمية الميسرة؛
+والمواد العلمية والإيمانية الميسرة؛
 لتكون زادًا يعين القلب على معرفة
 رسول الله ﷺ ومحبته،
 والصلاة والسلام عليه،
@@ -1462,20 +1759,23 @@ title="منهاج الهدى على تيك توك">
 </p>
 
 
-<div class="ayah">
+<div class="ayah-stage">
 
-﴿ إِنَّ اللَّهَ وَمَلَائِكَتَهُ
-يُصَلُّونَ عَلَى النَّبِيِّ
-يَا أَيُّهَا الَّذِينَ آمَنُوا
-صَلُّوا عَلَيْهِ وَسَلِّمُوا تَسْلِيمًا ﴾
+<div class="ayah-label">
+✦ افتتاحية زاد المحبين ✦
+</div>
 
-<br>
+<div
+  class="ayah-text"
+  id="openingAyah">
+</div>
 
-<small>
+<div class="ayah-source">
 سورة الأحزاب — الآية 56
-</small>
+</div>
 
 </div>
+
 
 </div>
 
@@ -1484,8 +1784,6 @@ title="منهاج الهدى على تيك توك">
 </section>
 
 
-
-<!-- QUICK NAV -->
 
 <div class="container">
 
@@ -1496,7 +1794,17 @@ title="منهاج الهدى على تيك توك">
 المكتبة الصوتية
 </a>
 
-<a href="#library">
+<a href="#facts">
+<span class="nav-icon">✦</span>
+معلومة عنه ﷺ
+</a>
+
+<a href="#akhlaq">
+<span class="nav-icon">♡</span>
+من أخلاقه ﷺ
+</a>
+
+<a href="#knowledge">
 <span class="nav-icon">✒</span>
 زاد المعرفة
 </a>
@@ -1504,16 +1812,6 @@ title="منهاج الهدى على تيك توك">
 <a href="#hadith">
 <span class="nav-icon">▣</span>
 أحاديث مختارة
-</a>
-
-<a href="#shamail">
-<span class="nav-icon">♡</span>
-الشمائل النبوية
-</a>
-
-<a href="#faq">
-<span class="nav-icon">؟</span>
-سؤال وجواب
 </a>
 
 <a href="#tasbih">
@@ -1527,111 +1825,12 @@ title="منهاج الهدى على تيك توك">
 
 
 
-<!-- DAILY -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="daily-card reveal">
-
-<div class="daily-label">
-✦ زاد اليوم ✦
-</div>
-
-<div class="daily-text" id="dailyText">
-اللهم صل وسلم وبارك على نبينا محمد ﷺ
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- TASBIH -->
-
-<section class="section" id="tasbih">
-
-<div class="container">
-
-<div class="stats">
-
-<article class="stat-card reveal">
-
-<h3>
-مِسبحتي
-</h3>
-
-<p>
-عداد شخصي يعينك على تذكر
-الصلاة والسلام على النبي ﷺ.
-</p>
-
-<div
-class="counter"
-id="salatCount">
-0
-</div>
-
-<button
-class="salat-button"
-id="salatButton">
-
-اللهم صل وسلم على نبينا محمد ﷺ
-
-</button>
-
-<button
-class="reset-button"
-id="resetButton">
-
-↻ تصفير العداد
-
-</button>
-
-</article>
-
-
-<article class="stat-card reveal">
-
-<h3>
-ورد المحبين
-</h3>
-
-<div class="counter">
-ﷺ
-</div>
-
-<p>
-
-اجعل لك نصيبًا يوميًا من الصلاة
-والسلام على رسول الله ﷺ،
-مع حضور القلب،
-وقراءة شيء من سنته وسيرته،
-والحرص على الاقتداء بهديه.
-
-</p>
-
-</article>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- AUDIO -->
-
 <section
-class="section"
-id="audio">
+  class="section"
+  id="audio">
 
 <div class="container">
+
 
 <div class="section-head reveal">
 
@@ -1640,13 +1839,9 @@ id="audio">
 </h2>
 
 <p>
-
-49 مقطعًا صوتيًا مرفوعًا مباشرة
-داخل منصة زاد المحبين.
-يبدأ تحميل الصوت عند الحاجة،
-ويتوقف المقطع السابق تلقائيًا
-عند تشغيل مقطع جديد.
-
+مختارات دعوية منتقاة
+في الصلاة والسلام على النبي ﷺ
+ومحبته وشمائله وهديه.
 </p>
 
 </div>
@@ -1655,46 +1850,47 @@ id="audio">
 <div class="audio-tools reveal">
 
 <input
-class="search-input"
-id="audioSearch"
-type="search"
-placeholder="ابحث عن مقطع أو رقم...">
+  class="search-input"
+  id="audioSearch"
+  type="search"
+  placeholder="ابحث عن رقم المقطع...">
+
 
 <div class="filters">
 
 <button
-class="filter-button active"
-data-range="all">
+  class="filter-button active"
+  data-range="all">
 الكل
 </button>
 
 <button
-class="filter-button"
-data-range="1-10">
+  class="filter-button"
+  data-range="1-10">
 01–10
 </button>
 
 <button
-class="filter-button"
-data-range="11-20">
+  class="filter-button"
+  data-range="11-20">
 11–20
 </button>
 
 <button
-class="filter-button"
-data-range="21-30">
+  class="filter-button"
+  data-range="21-30">
 21–30
 </button>
 
 <button
-class="filter-button"
-data-range="31-40">
+  class="filter-button"
+  data-range="31-40">
 31–40
 </button>
 
 <button
-class="filter-button"
-data-range="41-49">
+  class="filter-button"
+  data-range="41-49">
 41–49
 </button>
 
@@ -1704,8 +1900,198 @@ data-range="41-49">
 
 
 <div
-class="audio-grid"
-id="audioGrid">
+  class="audio-grid"
+  id="audioGrid">
+</div>
+
+
+<div class="more-audio-wrap">
+
+<button
+  class="more-audio"
+  id="moreAudio">
+
+عرض المزيد من المقاطع
+
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<section
+  class="section"
+  id="facts">
+
+<div class="container">
+
+
+<div class="section-head reveal">
+
+<h2>
+معلومة <span>عنه ﷺ</span>
+</h2>
+
+<p>
+ومضات موثقة من القرآن والسنة،
+تزيد القلب معرفة بالنبي الكريم ﷺ.
+</p>
+
+</div>
+
+
+<div class="info-grid">
+
+
+<article class="info-card reveal">
+
+<div class="card-icon">✦</div>
+
+<h3>
+خاتم النبيين
+</h3>
+
+<p>
+قال الله تعالى:
+﴿ وَلَٰكِن رَّسُولَ اللَّهِ
+وَخَاتَمَ النَّبِيِّينَ ﴾.
+</p>
+
+<span class="source">
+المصدر:
+القرآن الكريم —
+سورة الأحزاب، الآية 40.
+</span>
+
+</article>
+
+
+
+<article class="info-card reveal">
+
+<div class="card-icon">❖</div>
+
+<h3>
+أُرسل رحمة
+</h3>
+
+<p>
+قال الله تعالى:
+﴿ وَمَا أَرْسَلْنَاكَ
+إِلَّا رَحْمَةً لِّلْعَالَمِينَ ﴾.
+</p>
+
+<span class="source">
+المصدر:
+القرآن الكريم —
+سورة الأنبياء، الآية 107.
+</span>
+
+</article>
+
+
+
+<article class="info-card reveal">
+
+<div class="card-icon">☾</div>
+
+<h3>
+الأسوة الحسنة
+</h3>
+
+<p>
+قال تعالى:
+﴿ لَقَدْ كَانَ لَكُمْ
+فِي رَسُولِ اللَّهِ
+أُسْوَةٌ حَسَنَةٌ ﴾.
+</p>
+
+<span class="source">
+المصدر:
+القرآن الكريم —
+سورة الأحزاب، الآية 21.
+</span>
+
+</article>
+
+
+
+<article class="info-card reveal">
+
+<div class="card-icon">✧</div>
+
+<h3>
+محمد رسول الله ﷺ
+</h3>
+
+<p>
+قال تعالى:
+﴿ مُحَمَّدٌ رَّسُولُ اللَّهِ ﴾.
+</p>
+
+<span class="source">
+المصدر:
+القرآن الكريم —
+سورة الفتح، الآية 29.
+</span>
+
+</article>
+
+
+
+<article class="info-card reveal">
+
+<div class="card-icon">◇</div>
+
+<h3>
+بشير ونذير
+</h3>
+
+<p>
+قال سبحانه:
+﴿ إِنَّا أَرْسَلْنَاكَ
+شَاهِدًا وَمُبَشِّرًا وَنَذِيرًا ﴾.
+</p>
+
+<span class="source">
+المصدر:
+القرآن الكريم —
+سورة الفتح، الآية 8.
+</span>
+
+</article>
+
+
+
+<article class="info-card reveal">
+
+<div class="card-icon">✺</div>
+
+<h3>
+الصلاة عليه أمر رباني
+</h3>
+
+<p>
+أمر الله المؤمنين
+بالصلاة والسلام عليه ﷺ
+بعد أن أخبر أن الله وملائكته
+يصلون عليه.
+</p>
+
+<span class="source">
+المصدر:
+القرآن الكريم —
+سورة الأحزاب، الآية 56.
+</span>
+
+</article>
+
+
 </div>
 
 </div>
@@ -1714,13 +2100,185 @@ id="audioGrid">
 
 
 
-<!-- WRITTEN LIBRARY -->
-
 <section
-class="section"
-id="library">
+  class="section"
+  id="akhlaq">
 
 <div class="container">
+
+
+<div class="section-head reveal">
+
+<h2>
+من <span>أخلاقه ﷺ</span>
+</h2>
+
+<p>
+شمائل نبوية تربي القلب على الاقتداء،
+وتحول المحبة إلى عمل.
+</p>
+
+</div>
+
+
+<div class="info-grid">
+
+
+<article class="info-card reveal">
+
+<div class="card-icon">♡</div>
+
+<h3>
+عظيم الخُلُق
+</h3>
+
+<p>
+أثنى الله عليه ﷺ فقال:
+﴿ وَإِنَّكَ لَعَلَىٰ
+خُلُقٍ عَظِيمٍ ﴾.
+</p>
+
+<span class="source">
+المصدر:
+القرآن الكريم —
+سورة القلم، الآية 4.
+</span>
+
+</article>
+
+
+
+<article class="info-card reveal">
+
+<div class="card-icon">✦</div>
+
+<h3>
+كان خُلُقه القرآن
+</h3>
+
+<p>
+سُئلت أم المؤمنين عائشة رضي الله عنها
+عن خُلُق رسول الله ﷺ،
+فقالت:
+«كان خُلُقه القرآن».
+</p>
+
+<span class="source">
+المصدر:
+صحيح مسلم.
+</span>
+
+</article>
+
+
+
+<article class="info-card reveal">
+
+<div class="card-icon">❀</div>
+
+<h3>
+الرفق
+</h3>
+
+<p>
+قال ﷺ:
+«إن الرفق لا يكون في شيء
+إلا زانه،
+ولا ينزع من شيء إلا شانه».
+</p>
+
+<span class="source">
+المصدر:
+صحيح مسلم.
+</span>
+
+</article>
+
+
+
+<article class="info-card reveal">
+
+<div class="card-icon">◇</div>
+
+<h3>
+الحياء
+</h3>
+
+<p>
+كان رسول الله ﷺ
+أشد حياءً من العذراء
+في خدرها.
+</p>
+
+<span class="source">
+المصدر:
+صحيح البخاري وصحيح مسلم.
+</span>
+
+</article>
+
+
+
+<article class="info-card reveal">
+
+<div class="card-icon">✧</div>
+
+<h3>
+حسن الخُلُق
+</h3>
+
+<p>
+قال أنس رضي الله عنه:
+«كان رسول الله ﷺ
+أحسن الناس خُلُقًا».
+</p>
+
+<span class="source">
+المصدر:
+صحيح البخاري وصحيح مسلم.
+</span>
+
+</article>
+
+
+
+<article class="info-card reveal">
+
+<div class="card-icon">☼</div>
+
+<h3>
+الرحمة
+</h3>
+
+<p>
+كان هديه ﷺ قائمًا
+على الرحمة والتعليم والتيسير،
+وكان رحمة للعالمين.
+</p>
+
+<span class="source">
+المصدر:
+سورة الأنبياء، الآية 107،
+ونصوص السنة الصحيحة.
+</span>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section
+  class="section"
+  id="knowledge">
+
+<div class="container">
+
 
 <div class="section-head reveal">
 
@@ -1729,13 +2287,8 @@ id="library">
 </h2>
 
 <p>
-
-مكتبة كتابية مختصرة تجمع
-بين معرفة الفضائل،
-ومحبة الرسول ﷺ،
-والاقتداء بهديه،
-والتذكير بالسنن والشمائل.
-
+مواد قصيرة تعين على تحويل المحبة
+إلى معرفة واتباع وعمل.
 </p>
 
 </div>
@@ -1755,23 +2308,15 @@ id="library">
 </h3>
 
 <p>
-
-أمر الله المؤمنين بالصلاة والسلام
-على نبيه ﷺ،
-فهي عبادة جليلة تجمع
-امتثال أمر الله،
-وتعظيم مقام النبوة،
-وتجديد المحبة والصلة
-بهدي رسول الله ﷺ.
-
-ولا ينبغي أن تكون مجرد كلمات
-تجري على اللسان؛
-بل ذكرًا يوقظ في القلب
-معاني المحبة والاتباع.
-
+لأن الله سبحانه أمر المؤمنين بذلك،
+ولأن الصلاة والسلام عليه
+من أجل الأذكار،
+وفيها تجديد لمعاني المحبة
+والتوقير والاتباع.
 </p>
 
 </article>
+
 
 
 <article class="article-card reveal">
@@ -1785,22 +2330,16 @@ id="library">
 </h3>
 
 <p>
-
-ثبت عن رسول الله ﷺ:
-
-<strong>
+قال رسول الله ﷺ:
 «من صلى علي واحدة
 صلى الله عليه عشرًا».
-</strong>
 
-فانظر إلى سعة فضل الله:
-عمل يسير على اللسان
-يكتب الله به للمؤمن
-هذا الفضل العظيم.
-
+عمل يسير،
+وفضل عظيم من رب كريم.
 </p>
 
 </article>
+
 
 
 <article class="article-card reveal">
@@ -1814,211 +2353,38 @@ id="library">
 </h3>
 
 <p>
-
-من أكمل صيغ الصلاة على النبي ﷺ
+من أكمل صيغ الصلاة عليه ﷺ
 الصلاة الإبراهيمية
-التي علّمها رسول الله ﷺ لأصحابه.
+التي علّمها النبي ﷺ لأصحابه.
 
-والعناية بالألفاظ الثابتة
-تجمع للمؤمن بين فضل الذكر
-وكمال اتباع السنة.
-
+والعناية بالألفاظ المأثورة
+من تمام اتباع السنة.
 </p>
 
 </article>
 
 
+
 <article class="article-card reveal">
 
 <span class="article-tag">
-المحبة
+علامات المحبة
 </span>
 
 <h3>
-المحبة الصادقة ليست دعوى
+المحبة التي تثمر اتباعًا
 </h3>
 
 <p>
-
-محبة رسول الله ﷺ
-تظهر في تعظيم سنته،
-والفرح بهديه،
+محبة النبي ﷺ تظهر
+في تعلم سنته،
+وتعظيم هديه،
 ومعرفة سيرته،
-والاقتداء بأخلاقه،
-وتقديم ما جاء به
-على هوى النفس.
-
-فالمحبة التي لا تثمر اتباعًا
-تحتاج إلى مراجعة.
-
+والاقتداء بأخلاقه.
 </p>
 
 </article>
 
-
-<article class="article-card reveal">
-
-<span class="article-tag">
-الشمائل
-</span>
-
-<h3>
-اعرفه لتزداد له حبًا
-</h3>
-
-<p>
-
-حين تقرأ عن رحمته ﷺ،
-وتواضعه،
-وجوده،
-وحيائه،
-وصبره،
-وحسن عشرته؛
-
-تتحول السيرة من معلومات
-إلى قدوة حية،
-ويزداد القلب شوقًا
-إلى التأسي بهديه.
-
-</p>
-
-</article>
-
-
-<article class="article-card reveal">
-
-<span class="article-tag">
-الاتباع
-</span>
-
-<h3>
-من المحبة إلى الاقتداء
-</h3>
-
-<p>
-
-ليس المقصود من السيرة
-أن نعجب بالمواقف فحسب.
-
-بل نسأل:
-كيف كان رسول الله ﷺ
-يعفو؟
-كيف كان يعبد؟
-كيف كان يعامل أهله؟
-كيف كان يواجه الشدائد؟
-
-ثم نجتهد أن يكون لهديه
-أثر في حياتنا.
-
-</p>
-
-</article>
-
-
-<article class="article-card reveal">
-
-<span class="article-tag">
-التوازن
-</span>
-
-<h3>
-محبة بلا غلو ولا جفاء
-</h3>
-
-<p>
-
-رسول الله ﷺ
-أحب الخلق إلى المؤمن،
-وتوقيره وتعظيمه من الدين.
-
-لكن المحبة الشرعية
-منضبطة بما جاء به؛
-فنحبه،
-ونعظمه،
-ونتبعه،
-من غير غلو ولا جفاء.
-
-</p>
-
-</article>
-
-
-<article class="article-card reveal">
-
-<span class="article-tag">
-يوم الجمعة
-</span>
-
-<h3>
-يوم يكثر فيه المحبون
-</h3>
-
-<p>
-
-من المواطن التي يتأكد فيها
-الإكثار من الصلاة والسلام
-على رسول الله ﷺ يوم الجمعة.
-
-اجعل لك فيه وردًا،
-واجمع مع الذكر
-قراءة شيء من سيرته
-أو حديث من أحاديثه.
-
-</p>
-
-</article>
-
-
-<article class="article-card reveal">
-
-<span class="article-tag">
-البيت المسلم
-</span>
-
-<h3>
-كيف نزرع محبته في أبنائنا؟
-</h3>
-
-<p>
-
-عرّف أبناءك برسول الله ﷺ
-من خلال المواقف القصيرة الصحيحة،
-وحدثهم عن رحمته وأخلاقه،
-واجعل الصلاة عليه حاضرة
-في البيت.
-
-والقدوة في اتباع السنة
-أبلغ من كثرة الكلام.
-
-</p>
-
-</article>
-
-
-<article class="article-card reveal">
-
-<span class="article-tag">
-سنة اليوم
-</span>
-
-<h3>
-أحيِ سنة واحدة
-</h3>
-
-<p>
-
-اختر سنة صحيحة واحدة
-وتعلمها جيدًا،
-ثم حاول تطبيقها باستمرار.
-
-ومع الأيام
-تصبح حياة المسلم
-أقرب إلى هدي النبي ﷺ
-دون تكلف أو إرهاق.
-
-</p>
-
-</article>
 
 
 <article class="article-card reveal">
@@ -2032,43 +2398,78 @@ id="library">
 </h3>
 
 <p>
-
-نقرأ السيرة
-لنعرف صاحب الرسالة ﷺ،
-وكيف ربّى أصحابه،
-وكيف صبر في الدعوة،
-وكيف تعامل مع الابتلاء والنصر.
-
-فالسيرة مدرسة
-إيمان وأخلاق وصبر
-وحكمة ورحمة.
-
+لنرى الإيمان والصبر
+والرحمة والحكمة
+متمثلة في حياة كاملة،
+ونتعلم كيف كان ﷺ
+يتعامل مع الناس والشدائد.
 </p>
 
 </article>
 
 
+
 <article class="article-card reveal">
 
 <span class="article-tag">
-عمل يومي
+البيت المسلم
 </span>
 
 <h3>
-اجعل له ﷺ نصيبًا من يومك
+علّم أبناءك أن يحبوه ﷺ
 </h3>
 
 <p>
+حدثهم عن رحمته وأخلاقه،
+واختر لهم مواقف صحيحة
+من سيرته،
+واجعلهم يرون أثر اتباع السنة
+في سلوكك.
+</p>
 
-لا تجعل معرفة النبي ﷺ
-مرتبطة بمناسبة عابرة.
+</article>
 
-اقرأ كل يوم
-حديثًا صحيحًا،
-أو موقفًا من سيرته،
-أو خلقًا من شمائله،
-وأكثر من الصلاة والسلام عليه.
 
+
+<article class="article-card reveal">
+
+<span class="article-tag">
+يوم الجمعة
+</span>
+
+<h3>
+الإكثار من الصلاة عليه
+</h3>
+
+<p>
+من الأعمال المباركة
+الإكثار من الصلاة والسلام
+على رسول الله ﷺ يوم الجمعة،
+مع استحضار المعنى
+وصدق المحبة.
+</p>
+
+</article>
+
+
+
+<article class="article-card reveal">
+
+<span class="article-tag">
+عمل اليوم
+</span>
+
+<h3>
+أحيِ سنة واحدة
+</h3>
+
+<p>
+اختر سنة صحيحة،
+تعلمها جيدًا،
+ثم اجتهد في تطبيقها.
+
+ومع الأيام يزداد حضور
+الهدي النبوي في حياتك.
 </p>
 
 </article>
@@ -2082,13 +2483,12 @@ id="library">
 
 
 
-<!-- HADITH -->
-
 <section
-class="section"
-id="hadith">
+  class="section"
+  id="hadith">
 
 <div class="container">
+
 
 <div class="section-head reveal">
 
@@ -2097,10 +2497,7 @@ id="hadith">
 </h2>
 
 <p>
-نحرص في زاد المحبين
-على نسبة الحديث إلى مصدره
-والابتعاد عن الأحاديث المنتشرة
-التي لا تثبت.
+مختارات موجزة مع ذكر المصدر.
 </p>
 
 </div>
@@ -2113,259 +2510,125 @@ id="hadith">
 </h3>
 
 <div class="hadith-text">
-
 «من صلى علي واحدة،
 صلى الله عليه عشرًا».
-
 </div>
 
-<div class="source">
-رواه مسلم في صحيحه — رقم 408.
+<div class="hadith-source">
+صحيح مسلم — رقم 408.
 </div>
 
 </article>
 
 
+
 <article class="hadith-card reveal">
 
 <h3>
-عند ذكر النبي ﷺ
+عند ذكره ﷺ
 </h3>
 
 <div class="hadith-text">
-
 «البخيل الذي من ذُكرت عنده
 فلم يصلِّ عليَّ».
-
 </div>
 
-<div class="source">
-رواه الترمذي، وصححه أهل العلم.
+<div class="hadith-source">
+رواه الترمذي.
 </div>
 
 </article>
+
 
 
 <article class="hadith-card reveal">
 
 <h3>
-أسوتنا الحسنة
-</h3>
-
-<div class="hadith-text">
-
-﴿ لَقَدْ كَانَ لَكُمْ
-فِي رَسُولِ اللَّهِ
-أُسْوَةٌ حَسَنَةٌ ﴾
-
-</div>
-
-<div class="source">
-سورة الأحزاب — الآية 21.
-</div>
-
-</article>
-
-
-<article class="hadith-card reveal">
-
-<h3>
-رحمة للعالمين
-</h3>
-
-<div class="hadith-text">
-
-﴿ وَمَا أَرْسَلْنَاكَ
-إِلَّا رَحْمَةً لِلْعَالَمِينَ ﴾
-
-</div>
-
-<div class="source">
-سورة الأنبياء — الآية 107.
-</div>
-
-</article>
-
-</div>
-
-</section>
-
-
-
-<!-- SHAMAIL -->
-
-<section
-class="section"
-id="shamail">
-
-<div class="container">
-
-<div class="section-head reveal">
-
-<h2>
-من <span>شمائل المصطفى ﷺ</span>
-</h2>
-
-<p>
-كلما ازداد المؤمن معرفة
-بشمائل رسول الله ﷺ
-ازداد قلبه له محبة
-واشتياقًا إلى الاقتداء به.
-</p>
-
-</div>
-
-
-<div class="library-grid">
-
-
-<article class="article-card reveal">
-
-<span class="article-tag">
-الرحمة
-</span>
-
-<h3>
-رحمته ﷺ
-</h3>
-
-<p>
-
-قال تعالى:
-﴿ وَمَا أَرْسَلْنَاكَ
-إِلَّا رَحْمَةً لِلْعَالَمِينَ ﴾.
-
-وكانت رحمته ظاهرة
-في دعوته وتعليمه
-ومعاملته للناس.
-
-</p>
-
-</article>
-
-
-<article class="article-card reveal">
-
-<span class="article-tag">
 الأخلاق
-</span>
-
-<h3>
-على خُلُق عظيم
 </h3>
 
-<p>
+<div class="hadith-text">
+«إن من خياركم
+أحسنكم أخلاقًا».
+</div>
 
-قال تعالى:
-﴿ وَإِنَّكَ لَعَلَى خُلُقٍ عَظِيمٍ ﴾.
-
-فمن أراد الاقتداء به ﷺ
-فليجعل حسن الخلق
-جزءًا أصيلًا من تدينه.
-
-</p>
+<div class="hadith-source">
+متفق عليه.
+</div>
 
 </article>
 
 
-<article class="article-card reveal">
+</div>
 
-<span class="article-tag">
-التواضع
-</span>
+</section>
+
+
+
+<section
+  class="section"
+  id="tasbih">
+
+<div class="container">
+
+
+<div class="stats">
+
+
+<article class="stat-card reveal">
 
 <h3>
-تواضعه ﷺ
+مِسبحتي
 </h3>
 
 <p>
-
-كان قريبًا من الناس،
-بعيدًا عن الكبر،
-يجمع بين علو مقامه
-وبساطة معاملته.
-
-فالتواضع النبوي
-قوة أخلاق لا ضعف.
-
+عداد شخصي للتذكير بالصلاة
+والسلام على النبي ﷺ.
 </p>
+
+<div
+  class="counter"
+  id="salatCount">
+0
+</div>
+
+<button
+  class="salat-button"
+  id="salatButton">
+
+اللهم صل وسلم
+على نبينا محمد ﷺ
+
+</button>
+
+<button
+  class="reset-button"
+  id="resetButton">
+
+↻ تصفير العداد
+
+</button>
 
 </article>
 
 
-<article class="article-card reveal">
 
-<span class="article-tag">
-الصبر
-</span>
+<article class="stat-card reveal">
 
 <h3>
-صبره ﷺ
+ورد المحبين
 </h3>
 
-<p>
-
-تحمل أذى الدعوة،
-وثبت على الحق،
-ولم تمنعه الشدائد
-من الرحمة والحكمة.
-
-ففي سيرته مدرسة
-لمن أثقلته الابتلاءات.
-
-</p>
-
-</article>
-
-
-<article class="article-card reveal">
-
-<span class="article-tag">
-الجود
-</span>
-
-<h3>
-جوده ﷺ
-</h3>
+<div class="counter">
+ﷺ
+</div>
 
 <p>
-
-كان كريم النفس،
-محبًا للخير،
-يعلم أصحابه البذل
-والإحسان إلى الناس.
-
-ومن محبته
-أن نتخلق بما نستطيع
-من هذه الأخلاق.
-
-</p>
-
-</article>
-
-
-<article class="article-card reveal">
-
-<span class="article-tag">
-حسن العشرة
-</span>
-
-<h3>
-الهدي يبدأ من البيت
-</h3>
-
-<p>
-
-من أعظم أبواب الاقتداء
-أن يظهر أثر السنة
-في تعامل المسلم
-مع أهله،
-وجيرانه،
-والصغير والكبير.
-
-فالخلق الحسن
-من أعظم آثار الهدي النبوي.
-
+اجعل لك وردًا من الصلاة والسلام
+على رسول الله ﷺ،
+واقرأ شيئًا من سيرته
+وشمائله وسنته،
+واجتهد في الاقتداء بهديه.
 </p>
 
 </article>
@@ -2379,13 +2642,10 @@ id="shamail">
 
 
 
-<!-- FAQ -->
-
-<section
-class="section"
-id="faq">
+<section class="section">
 
 <div class="container">
+
 
 <div class="section-head reveal">
 
@@ -2395,7 +2655,7 @@ id="faq">
 
 <p>
 اضغط على السؤال
-لتظهر الإجابة.
+لقراءة الإجابة.
 </p>
 
 </div>
@@ -2411,16 +2671,15 @@ id="faq">
 </summary>
 
 <p>
-
 من أكمل الصيغ
 الصلاة الإبراهيمية
 الثابتة عن رسول الله ﷺ،
 والعناية بالصيغ المأثورة
 أولى وأكمل في الاتباع.
-
 </p>
 
 </details>
+
 
 
 <details class="reveal">
@@ -2430,141 +2689,51 @@ id="faq">
 </summary>
 
 <p>
-
 ليس هناك عدد عام واجب
 يلتزمه المسلم كل يوم.
-والمشروع هو الإكثار
+
+والمشروع الإكثار
 من الصلاة والسلام عليه ﷺ.
 
-أما العداد الموجود في المنصة
-فهو وسيلة شخصية للتذكير
+أما عداد المنصة
+فوسيلة شخصية للتذكير،
 وليس تحديدًا شرعيًا.
-
 </p>
 
 </details>
 
 
+
 <details class="reveal">
 
 <summary>
-هل الصلاة على النبي ﷺ مشروعة في كل وقت؟
+كيف نزداد محبة لرسول الله ﷺ؟
 </summary>
 
 <p>
-
-الصلاة والسلام عليه ﷺ
-من الذكر المشروع،
-وتتأكد في مواطن جاءت بها السنة،
-ومنها عند ذكره،
-ويوم الجمعة.
-
+بمعرفته،
+وقراءة سيرته الصحيحة،
+والتعرف إلى شمائله،
+وتعلم سنته،
+والصلاة والسلام عليه،
+والاجتهاد في اتباع هديه.
 </p>
 
 </details>
 
 
-<details class="reveal">
-
-<summary>
-ما علامة صدق محبة النبي ﷺ؟
-</summary>
-
-<p>
-
-من أعظم علاماتها
-معرفة سنته،
-وتعظيم هديه،
-والاقتداء به،
-وتقديم ما جاء به
-على هوى النفس.
-
-</p>
-
-</details>
-
 
 <details class="reveal">
 
 <summary>
-كيف أبدأ قراءة السيرة النبوية؟
+كيف نزرع محبته في أبنائنا؟
 </summary>
 
 <p>
-
-ابدأ بكتاب موثوق وميسر،
-واقرأ بتأنٍ،
-ولا تجعل هدفك إنهاء الصفحات فقط.
-
-بعد كل موقف
-اسأل نفسك:
-ما الدرس الذي أستطيع
-أن أطبقه في حياتي؟
-
-</p>
-
-</details>
-
-
-<details class="reveal">
-
-<summary>
-ما المقصود بالشمائل النبوية؟
-</summary>
-
-<p>
-
-هي ما يتعلق بصفات
-رسول الله ﷺ،
-وأخلاقه،
-وآدابه،
-وعبادته،
-ومعاملاته،
-وما عُرف به
-من الرحمة والجود
-والحياء والصبر والتواضع.
-
-</p>
-
-</details>
-
-
-<details class="reveal">
-
-<summary>
-كيف أجعل أولادي يحبون النبي ﷺ؟
-</summary>
-
-<p>
-
-حدثهم عنه بأسلوب محبب،
-واقصص عليهم المواقف الصحيحة
-من سيرته،
-وعرفهم برحمته وأخلاقه،
-واجعلهم يرون أثر اتباع السنة
-في سلوكك أنت أولًا.
-
-</p>
-
-</details>
-
-
-<details class="reveal">
-
-<summary>
-هل المحبة وحدها تكفي؟
-</summary>
-
-<p>
-
-المحبة الصادقة
-تثمر اتباعًا وطاعة.
-
-ولهذا فإن من تمام المحبة
-أن يتعلم المسلم هدي النبي ﷺ
-ويجتهد في الاقتداء به
-بحسب استطاعته.
-
+بالمواقف القصيرة الصحيحة،
+والحديث عن رحمته وأخلاقه،
+وبالقدوة العملية
+في اتباع سنته داخل البيت.
 </p>
 
 </details>
@@ -2580,14 +2749,13 @@ id="faq">
 </div>
 
 <div class="blessing-text">
-
 اللهم صل وسلم وبارك
 على نبينا محمد،
 وعلى آله وصحبه أجمعين.
-
 </div>
 
 </div>
+
 
 </div>
 
@@ -2597,8 +2765,6 @@ id="faq">
 </main>
 
 
-
-<!-- FOOTER -->
 
 <footer class="site-footer">
 
@@ -2647,31 +2813,48 @@ id="faq">
 </p>
 
 
-<div class="socials"
-style="
-justify-content:center;
-margin-top:22px;
-">
+<div
+  class="socials"
+  style="
+    justify-content:center;
+    margin-top:24px;
+  ">
+
 
 <a
-class="social-link youtube"
-href="https://youtube.com/@minhaj-alhuda?si=ewIrxDR1OMmjUAyc"
-target="_blank"
-rel="noopener"
-title="يوتيوب منهاج الهدى">
-▶
+  class="social-link youtube"
+  href="https://youtube.com/@minhaj-alhuda?si=ewIrxDR1OMmjUAyc"
+  target="_blank"
+  rel="noopener"
+  aria-label="يوتيوب منهاج الهدى">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z"/>
+
+</svg>
+
 </a>
 
+
 <a
-class="social-link tiktok"
-href="https://www.tiktok.com/@minhaj.alhuda?_r=1&_t=ZS-98wdUNPtpga"
-target="_blank"
-rel="noopener"
-title="تيك توك منهاج الهدى">
-♪
+  class="social-link tiktok"
+  href="https://www.tiktok.com/@minhaj.alhuda?_r=1&_t=ZS-98wdUNPtpga"
+  target="_blank"
+  rel="noopener"
+  aria-label="تيك توك منهاج الهدى">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M16.6 2c.3 2.4 1.7 3.9 4.4 4.1v3.2c-1.6 0-3.1-.5-4.4-1.3v7.2c0 4.5-3.5 6.8-6.9 6.8A6.7 6.7 0 0 1 3 15.3a6.7 6.7 0 0 1 7.8-6.6v3.4a3.4 3.4 0 1 0 2.4 3.2V2h3.4Z"/>
+
+</svg>
+
 </a>
+
 
 </div>
+
 
 </footer>
 
@@ -2679,225 +2862,161 @@ title="تيك توك منهاج الهدى">
 
 <script>
 
-/* =========================================
-   التاريخ الهجري
-========================================= */
+/* ===============================
+   HIJRI DATE
+=============================== */
 
-(function(){
+function updateHijri(){
 
-  const element =
-    document.getElementById(
-      "hijriDate"
-    );
+  const now = new Date();
 
   try{
 
     const formatter =
       new Intl.DateTimeFormat(
-        "ar-SA-u-ca-islamic-umalqura",
+        "ar-SA-u-ca-islamic-umalqura-nu-latn",
         {
-          weekday:"long",
           day:"numeric",
           month:"long",
           year:"numeric"
         }
       );
 
-    element.textContent =
-      formatter.format(
-        new Date()
-      );
+    const parts =
+      formatter.formatToParts(now);
 
-  }catch(error){
+    let day="";
+    let month="";
+    let year="";
 
-    element.textContent =
-      "التاريخ الهجري";
+    parts.forEach(part=>{
+
+      if(part.type==="day"){
+        day=part.value;
+      }
+
+      if(part.type==="month"){
+        month=part.value;
+      }
+
+      if(part.type==="year"){
+        year=part.value;
+      }
+
+    });
+
+    document
+      .getElementById("hijriDate")
+      .textContent =
+        `${day} ${month} ${year} هـ`;
 
   }
 
-})();
+  catch(error){
+
+    document
+      .getElementById("hijriDate")
+      .textContent =
+        "التاريخ الهجري";
+
+  }
+
+}
+
+updateHijri();
 
 
 
-/* =========================================
-   زاد اليوم
-========================================= */
+/* ===============================
+   CLOCK
+=============================== */
 
-const dailyMessages = [
+function updateClock(){
 
-  "اللهم صل وسلم وبارك على نبينا محمد ﷺ",
+  const now = new Date();
 
-  "محبة رسول الله ﷺ تثمر اتباعًا لهديه.",
+  document
+    .getElementById("clock")
+    .textContent =
+      now.toLocaleTimeString(
+        "en-GB",
+        {
+          hour:"2-digit",
+          minute:"2-digit",
+          hour12:false
+        }
+      );
 
-  "اقرأ اليوم حديثًا صحيحًا من حديث رسول الله ﷺ واعمل بما تستطيع منه.",
+}
 
-  "من عرف شمائل النبي ﷺ ازداد قلبه له محبة.",
+updateClock();
 
-  "اجعل للصلاة والسلام على النبي ﷺ نصيبًا ثابتًا من يومك.",
+setInterval(updateClock,1000);
 
-  "السيرة النبوية ليست تاريخًا فحسب؛ بل مدرسة للحياة.",
 
-  "من تمام توقير رسول الله ﷺ العناية بسنته والعمل بهديه.",
 
-  "اللهم ارزقنا صدق محبة نبيك ﷺ وحسن اتباعه."
+/* ===============================
+   OPENING AYAH
+=============================== */
+
+const ayahWords = [
+
+  "إِنَّ",
+  "اللَّهَ",
+  "وَمَلَائِكَتَهُ",
+  "يُصَلُّونَ",
+  "عَلَى",
+  "النَّبِيِّ",
+  "يَا",
+  "أَيُّهَا",
+  "الَّذِينَ",
+  "آمَنُوا",
+  "صَلُّوا",
+  "عَلَيْهِ",
+  "وَسَلِّمُوا",
+  "تَسْلِيمًا"
 
 ];
 
-const today =
-  new Date();
-
-const dailyIndex =
-  (
-    today.getFullYear() +
-    today.getMonth() +
-    today.getDate()
-  )
-  %
-  dailyMessages.length;
-
-document
-.getElementById(
-  "dailyText"
-)
-.textContent =
-  dailyMessages[
-    dailyIndex
-  ];
-
-
-
-/* =========================================
-   المسبحة
-========================================= */
-
-const SALAT_KEY =
-  "zad_almohebeen_counter_v2";
-
-let salatCount =
-  Number(
-    localStorage.getItem(
-      SALAT_KEY
-    )
-    || 0
-  );
-
-if(
-  !Number.isFinite(
-    salatCount
-  )
-){
-  salatCount=0;
-}
-
-const counterElement =
+const openingAyah =
   document.getElementById(
-    "salatCount"
+    "openingAyah"
   );
 
-function updateCounter(){
 
-  counterElement.textContent =
-    salatCount.toLocaleString(
-      "ar"
-    );
+ayahWords.forEach(
+  (word,index)=>{
 
-}
-
-updateCounter();
-
-
-document
-.getElementById(
-  "salatButton"
-)
-.addEventListener(
-  "click",
-  function(){
-
-    salatCount++;
-
-    localStorage.setItem(
-      SALAT_KEY,
-      String(salatCount)
-    );
-
-    updateCounter();
-
-    counterElement.animate(
-      [
-        {
-          transform:
-            "scale(1)"
-        },
-        {
-          transform:
-            "scale(1.15)"
-        },
-        {
-          transform:
-            "scale(1)"
-        }
-      ],
-      {
-        duration:250
-      }
-    );
-
-  }
-);
-
-
-document
-.getElementById(
-  "resetButton"
-)
-.addEventListener(
-  "click",
-  function(){
-
-    const answer =
-      confirm(
-        "هل تريد تصفير العداد؟"
+    const span =
+      document.createElement(
+        "span"
       );
 
-    if(!answer){
-      return;
-    }
+    span.textContent =
+      word + " ";
 
-    salatCount=0;
+    span.style.animationDelay =
+      `${1.1 + index * .10}s`;
 
-    localStorage.setItem(
-      SALAT_KEY,
-      "0"
-    );
-
-    updateCounter();
+    openingAyah
+      .appendChild(span);
 
   }
 );
 
 
 
-/* =========================================
-   بيانات المقاطع
-   سنستبدل العناوين والأسماء لاحقا
-   عندما ترسل أسماء المشايخ والعناوين
-========================================= */
+/* ===============================
+   AUDIO DATA
+=============================== */
 
 const audioItems=[];
 
-for(
-  let i=1;
-  i<=49;
-  i++
-){
+for(let i=1;i<=49;i++){
 
   const number =
     String(i)
-    .padStart(
-      2,
-      "0"
-    );
+      .padStart(2,"0");
 
   audioItems.push({
 
@@ -2912,10 +3031,7 @@ for(
       `المقطع الصوتي ${number}`,
 
     scholar:
-      "زاد المحبين",
-
-    category:
-      "مختارات في محبة النبي ﷺ"
+      "زاد المحبين"
 
   });
 
@@ -2923,56 +3039,51 @@ for(
 
 
 
-/* =========================================
-   عرض الصوتيات
-========================================= */
+/* ===============================
+   AUDIO LIBRARY
+=============================== */
 
 const audioGrid =
   document.getElementById(
     "audioGrid"
   );
 
-let currentRange =
-  "all";
+let currentRange="all";
+
+let audioLimit=12;
 
 
 function renderAudio(){
 
   const search =
     document
-    .getElementById(
-      "audioSearch"
-    )
-    .value
-    .trim()
-    .toLowerCase();
+      .getElementById(
+        "audioSearch"
+      )
+      .value
+      .trim()
+      .toLowerCase();
 
 
-  const filtered =
+  let filtered =
     audioItems.filter(
-      function(item){
+      item=>{
 
         let rangeMatch=true;
 
         if(
-          currentRange
-          !==
-          "all"
+          currentRange!=="all"
         ){
 
-          const parts =
+          const range =
             currentRange
-            .split("-")
-            .map(Number);
+              .split("-")
+              .map(Number);
 
           rangeMatch =
-            item.number
-            >=
-            parts[0]
+            item.number >= range[0]
             &&
-            item.number
-            <=
-            parts[1];
+            item.number <= range[1];
 
         }
 
@@ -2980,21 +3091,11 @@ function renderAudio(){
         const searchMatch =
           !search
           ||
-          item.num.includes(
-            search
-          )
+          item.num.includes(search)
           ||
           item.title
-          .toLowerCase()
-          .includes(
-            search
-          )
-          ||
-          item.scholar
-          .toLowerCase()
-          .includes(
-            search
-          );
+            .toLowerCase()
+            .includes(search);
 
 
         return(
@@ -3007,11 +3108,30 @@ function renderAudio(){
     );
 
 
+  let visibleItems =
+    filtered;
+
+
+  if(
+    !search
+    &&
+    currentRange==="all"
+  ){
+
+    visibleItems =
+      filtered.slice(
+        0,
+        audioLimit
+      );
+
+  }
+
+
   audioGrid.innerHTML="";
 
 
-  filtered.forEach(
-    function(item){
+  visibleItems.forEach(
+    item=>{
 
       const card =
         document.createElement(
@@ -3024,35 +3144,42 @@ function renderAudio(){
 
       card.innerHTML=`
 
-        <div class="audio-number">
-          ${item.num}
+        <div class="audio-top">
+
+          <div>
+
+            <div class="audio-number">
+              المقطع ${item.num}
+            </div>
+
+            <h3 class="audio-title">
+              ${item.title}
+            </h3>
+
+            <div class="audio-scholar">
+              ${item.scholar}
+            </div>
+
+          </div>
+
+
+          <button
+            class="big-play"
+            type="button"
+            aria-label="تشغيل المقطع ${item.num}">
+            ▶
+          </button>
+
         </div>
 
-        <span class="audio-badge">
-          ${item.category}
-        </span>
-
-        <div class="audio-title">
-          ${item.title}
-        </div>
-
-        <div class="audio-scholar">
-          ${item.scholar}
-        </div>
-
-        <div class="audio-meta">
-          تشغيل مباشر من مكتبة زاد المحبين
-        </div>
 
         <audio
           controls
-          preload="none"
-        >
+          preload="none">
 
           <source
             src="${item.file}"
-            type="audio/mpeg"
-          >
+            type="audio/mpeg">
 
           متصفحك لا يدعم تشغيل الصوت.
 
@@ -3061,54 +3188,183 @@ function renderAudio(){
       `;
 
 
-      audioGrid.appendChild(
-        card
-      );
+      audioGrid
+        .appendChild(card);
 
     }
   );
 
 
-  activateSingleAudio();
+  activateAudioPlayers();
+
+
+  const moreButton =
+    document
+      .getElementById(
+        "moreAudio"
+      );
+
+
+  if(
+    search
+    ||
+    currentRange!=="all"
+    ||
+    audioLimit>=filtered.length
+  ){
+
+    moreButton.style.display=
+      "none";
+
+  }
+
+  else{
+
+    moreButton.style.display=
+      "inline-block";
+
+  }
 
 }
 
 
 
-/* =========================================
-   تشغيل مقطع واحد فقط
-========================================= */
+/* ===============================
+   ONLY ONE AUDIO AT A TIME
+=============================== */
 
-function activateSingleAudio(){
+function activateAudioPlayers(){
 
   const players =
     document.querySelectorAll(
-      "audio"
+      ".audio-card audio"
     );
 
 
   players.forEach(
-    function(player){
+    player=>{
+
+      const card =
+        player.closest(
+          ".audio-card"
+        );
+
+      const button =
+        card.querySelector(
+          ".big-play"
+        );
+
+
+      button.addEventListener(
+        "click",
+        ()=>{
+
+          if(player.paused){
+
+            player.play();
+
+          }
+
+          else{
+
+            player.pause();
+
+          }
+
+        }
+      );
+
 
       player.addEventListener(
         "play",
-        function(){
+        ()=>{
 
-          players.forEach(
-            function(other){
+          document
+            .querySelectorAll(
+              ".audio-card audio"
+            )
+            .forEach(
+              other=>{
 
-              if(
-                other
-                !==
-                player
-              ){
+                if(other!==player){
 
-                other.pause();
+                  other.pause();
+
+                }
 
               }
+            );
 
-            }
-          );
+
+          document
+            .querySelectorAll(
+              ".audio-card"
+            )
+            .forEach(
+              otherCard=>{
+
+                otherCard
+                  .classList
+                  .remove("playing");
+
+              }
+            );
+
+
+          document
+            .querySelectorAll(
+              ".big-play"
+            )
+            .forEach(
+              otherButton=>{
+
+                otherButton.textContent=
+                  "▶";
+
+              }
+            );
+
+
+          card
+            .classList
+            .add("playing");
+
+          button.textContent=
+            "❚❚";
+
+        }
+      );
+
+
+      player.addEventListener(
+        "pause",
+        ()=>{
+
+          if(player.ended){
+            return;
+          }
+
+          card
+            .classList
+            .remove("playing");
+
+          button.textContent=
+            "▶";
+
+        }
+      );
+
+
+      player.addEventListener(
+        "ended",
+        ()=>{
+
+          card
+            .classList
+            .remove("playing");
+
+          button.textContent=
+            "▶";
 
         }
       );
@@ -3120,93 +3376,261 @@ function activateSingleAudio(){
 
 
 
-/* =========================================
-   البحث
-========================================= */
+/* ===============================
+   AUDIO SEARCH
+=============================== */
 
 document
-.getElementById(
-  "audioSearch"
-)
-.addEventListener(
-  "input",
-  renderAudio
-);
+  .getElementById(
+    "audioSearch"
+  )
+  .addEventListener(
+    "input",
+    ()=>{
+
+      audioLimit=12;
+
+      renderAudio();
+
+    }
+  );
 
 
 
-/* =========================================
-   فلاتر الصوتيات
-========================================= */
+/* ===============================
+   AUDIO FILTERS
+=============================== */
 
 document
-.querySelectorAll(
-  ".filter-button"
-)
-.forEach(
-  function(button){
+  .querySelectorAll(
+    ".filter-button"
+  )
+  .forEach(
+    button=>{
 
-    button.addEventListener(
-      "click",
-      function(){
+      button.addEventListener(
+        "click",
+        ()=>{
 
-        document
-        .querySelectorAll(
-          ".filter-button"
-        )
-        .forEach(
-          function(item){
+          document
+            .querySelectorAll(
+              ".filter-button"
+            )
+            .forEach(
+              item=>{
 
-            item.classList.remove(
-              "active"
+                item
+                  .classList
+                  .remove("active");
+
+              }
             );
 
-          }
-        );
+
+          button
+            .classList
+            .add("active");
 
 
-        button.classList.add(
-          "active"
-        );
+          currentRange =
+            button.dataset.range;
 
 
-        currentRange =
-          button.dataset.range;
+          audioLimit=12;
+
+          renderAudio();
+
+        }
+      );
+
+    }
+  );
 
 
-        renderAudio();
 
-      }
-    );
+/* ===============================
+   LOAD MORE AUDIO
+=============================== */
 
-  }
-);
+document
+  .getElementById(
+    "moreAudio"
+  )
+  .addEventListener(
+    "click",
+    ()=>{
+
+      audioLimit += 12;
+
+      renderAudio();
+
+    }
+  );
 
 
 renderAudio();
 
 
 
-/* =========================================
-   حركات ظهور العناصر
-========================================= */
+/* ===============================
+   TASBIH
+=============================== */
+
+const SALAT_KEY =
+  "zad_almohebeen_counter_v3";
+
+
+let salatCount =
+  Number(
+    localStorage
+      .getItem(
+        SALAT_KEY
+      )
+    ||
+    0
+  );
+
+
+if(
+  !Number.isFinite(
+    salatCount
+  )
+){
+
+  salatCount=0;
+
+}
+
+
+const counterElement =
+  document
+    .getElementById(
+      "salatCount"
+    );
+
+
+function updateCounter(){
+
+  counterElement
+    .textContent =
+      salatCount
+        .toLocaleString(
+          "ar"
+        );
+
+}
+
+
+updateCounter();
+
+
+document
+  .getElementById(
+    "salatButton"
+  )
+  .addEventListener(
+    "click",
+    ()=>{
+
+      salatCount++;
+
+      localStorage
+        .setItem(
+          SALAT_KEY,
+          String(
+            salatCount
+          )
+        );
+
+
+      updateCounter();
+
+
+      counterElement
+        .animate(
+          [
+            {
+              transform:
+                "scale(1)"
+            },
+
+            {
+              transform:
+                "scale(1.14)"
+            },
+
+            {
+              transform:
+                "scale(1)"
+            }
+          ],
+
+          {
+            duration:250
+          }
+        );
+
+    }
+  );
+
+
+document
+  .getElementById(
+    "resetButton"
+  )
+  .addEventListener(
+    "click",
+    ()=>{
+
+      if(
+        !confirm(
+          "هل تريد تصفير العداد؟"
+        )
+      ){
+        return;
+      }
+
+      salatCount=0;
+
+      localStorage
+        .setItem(
+          SALAT_KEY,
+          "0"
+        );
+
+      updateCounter();
+
+    }
+  );
+
+
+
+/* ===============================
+   REVEAL ANIMATION
+=============================== */
 
 const revealObserver =
   new IntersectionObserver(
-    function(entries){
+
+    entries=>{
 
       entries.forEach(
-        function(entry){
+        entry=>{
 
           if(
             entry.isIntersecting
           ){
 
             entry.target
-            .classList
-            .add(
-              "visible"
-            );
+              .classList
+              .add(
+                "visible"
+              );
+
+            revealObserver
+              .unobserve(
+                entry.target
+              );
 
           }
 
@@ -3214,43 +3638,45 @@ const revealObserver =
       );
 
     },
+
     {
       threshold:.08
     }
+
   );
 
 
 document
-.querySelectorAll(
-  ".reveal"
-)
-.forEach(
-  function(element){
+  .querySelectorAll(
+    ".reveal"
+  )
+  .forEach(
+    element=>{
 
-    revealObserver.observe(
-      element
-    );
+      revealObserver
+        .observe(element);
 
-  }
-);
-
+    }
+  );
 
 
-/* =========================================
-   فتح سؤال واحد في كل مرة
-========================================= */
+
+/* ===============================
+   ONE FAQ OPEN AT A TIME
+=============================== */
 
 const questions =
   document.querySelectorAll(
     "details"
   );
 
+
 questions.forEach(
-  function(question){
+  question=>{
 
     question.addEventListener(
       "toggle",
-      function(){
+      ()=>{
 
         if(
           !question.open
@@ -3258,13 +3684,12 @@ questions.forEach(
           return;
         }
 
+
         questions.forEach(
-          function(other){
+          other=>{
 
             if(
-              other
-              !==
-              question
+              other!==question
             ){
 
               other.open=false;
