@@ -2,67 +2,82 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>اختبار الصوت</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>اختبار المقاطع الصوتية</title>
 
   <style>
-    body{
-      margin:0;
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:#061a2b;
-      color:white;
-      font-family:Tahoma,Arial,sans-serif;
+    body {
+      margin: 0;
+      padding: 25px 15px;
+      background: #071b2c;
+      color: white;
+      font-family: Arial, sans-serif;
     }
 
-    .box{
-      width:min(92%,520px);
-      padding:30px 22px;
-      border:1px solid #d5a44a;
-      border-radius:24px;
-      background:#0a2941;
-      text-align:center;
+    h1 {
+      text-align: center;
+      color: #e8b84f;
+      margin-bottom: 10px;
     }
 
-    h1{
-      color:#f0bd5e;
-      font-size:28px;
-      margin-bottom:18px;
+    .note {
+      text-align: center;
+      color: #cbd5df;
+      margin-bottom: 30px;
     }
 
-    p{
-      font-size:18px;
-      line-height:1.9;
-      color:#d6dde2;
+    .card {
+      background: #102d47;
+      border: 1px solid #e8b84f;
+      border-radius: 18px;
+      padding: 18px;
+      margin: 15px auto;
+      max-width: 600px;
     }
 
-    audio{
-      width:100%;
-      margin-top:20px;
+    .title {
+      color: #f2c766;
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    audio {
+      width: 100%;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="box">
+<h1>اختبار المقاطع الصوتية</h1>
+<p class="note">اختبار المقاطع من 01 إلى 11</p>
 
-    <h1>اختبار المقطع الصوتي</h1>
+<div id="audioList"></div>
 
-    <p>
-      الشيخ ولد سيدي يحي
-      <br>
-      فضل الصلاة على النبي ﷺ
-    </p>
+<script>
+  const container = document.getElementById("audioList");
 
-    <audio controls preload="metadata">
-      <source src="audio-01.mp3.mp3" type="audio/mpeg">
-      متصفحك لا يدعم تشغيل الصوت.
-    </audio>
+  for (let i = 1; i <= 11; i++) {
 
-  </div>
+    const number = String(i).padStart(2, "0");
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <div class="title">المقطع الصوتي ${number}</div>
+
+      <audio controls preload="none">
+        <source src="audio-${number}.mp3.mp3" type="audio/mpeg">
+        متصفحك لا يدعم تشغيل الصوت.
+      </audio>
+    `;
+
+    container.appendChild(card);
+  }
+</script>
 
 </body>
 </html>
